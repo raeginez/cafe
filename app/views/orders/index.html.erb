@@ -1,0 +1,16 @@
+<h1>Your Order</h1>
+
+<table>
+    <tr>
+        <th>Quantity</th>
+        <th>Item</th>
+    </tr>
+    <%if @order_items %>
+        <% @order_items.each do |order_item| %>
+            <tr>
+                <td><%= order_item.quantity %></td>
+                <td><%= order_item.name %></td>
+            </tr>
+        <%end%>
+    <%end%>
+</table>

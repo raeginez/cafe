@@ -10,21 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_03_224344) do
+ActiveRecord::Schema.define(version: 2019_06_14_050020) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "menu_items", force: :cascade do |t|
-    t.string "name"
-    t.float "price"
+    t.string "name", limit: 50, null: false
+    t.decimal "price", precision: 10, scale: 2, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "order_items", force: :cascade do |t|
-    t.string "name", limit: 50
     t.integer "quantity"
+    t.string "name", limit: 50
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
